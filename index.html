@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <link rel="stylesheet" href="timetable.css">
+    <style>
+      body {
+        background-color: #c4b6d7;
+      }
+    </style>
+</head>
+<body>
+<div id="timetable-thursday" class="timetable"></div>
+<div id="timetable-friday" class="timetable"></div>
+<div id="timetable-saturday" class="timetable"></div>
+<script src="timetable.js"></script>
+<script>
+var timetable = new Timetable();
+timetable.addLocations(['Klub Cverna']);
+timetable.setScope(20, 0); // optional, only whole hours between 0 and 23
+
+timetable.addEvent('OPEN', 'Klub Cverna', new Date(2022,4,21,20,0), new Date(2022,4,21,20,20));
+timetable.addEvent('Miroslav Tóth & Dystopic Requiem Quartet', 'Klub Cverna', new Date(2022,4,21,21,0), new Date(2022,4,21,21,40), {url: 'https://sharpe.sk/festival/artists/miroslav-toth-dystopic-requiem-quartet-sk/'});
+timetable.addEvent('ISAMA ZING', 'Klub Cverna', new Date(2022,4,21,23,0), new Date(2022,4,21,23,40), {url: 'https://sharpe.sk/festival/artists/isama-zing-blurry-af-ensemble-sk/'});
+
+var renderer = new Timetable.Renderer(timetable);
+renderer.draw('#timetable-thursday'); // any css selector
+</script>
+
+<script>
+  var timetable2 = new Timetable();
+  timetable2.addLocations(['Klub Cverna', 'KOOPERATIVA Stage', 'Kabinet Stage', 'Secret Acoustic Session', 'RÁDIO_FM Stage', 'UNDERGROUND by Nočná']);
+  timetable2.setScope(18, 4); // optional, only whole hours between 0 and 23
+
+  timetable2.addEvent('OPEN', 'Klub Cverna', new Date(2022, 4, 22, 18, 0), new Date(2022, 4, 22, 18, 20));
+  timetable2.addEvent('Tasun', 'KOOPERATIVA Stage', new Date(2022, 4, 22, 18, 0), new Date(2022, 4, 22, 19, 20), { url: 'https://sharpe.sk/festival/artists/tasun-sk/' });
+  timetable2.addEvent('freekind', 'Klub Cverna', new Date(2022, 4, 22, 19, 20), new Date(2022, 4, 22, 20, 0), { url: 'https://sharpe.sk/festival/artists/freekind-hrsi/' });
+  timetable2.addEvent('Amelie Siba', 'KOOPERATIVA Stage', new Date(2022, 4, 22, 20, 0), new Date(2022, 4, 22, 20, 40), { url: 'https://sharpe.sk/festival/artists/amelie-siba-cz/' });
+  timetable2.addEvent('Ranjevš & Óbasz', 'Kabinet Stage', new Date(2022, 4, 22, 20, 20), new Date(2022, 4, 22, 21, 0), { url: 'https://sharpe.sk/festival/artists/ranjevs-obasz-skcz/' });
+  timetable2.addEvent('Global Charming', 'Klub Cverna', new Date(2022, 4, 22, 20, 40), new Date(2022, 4, 22, 21, 20), { url: 'https://sharpe.sk/festival/artists/global-charming-nl/' });
+  timetable2.addEvent('Secret', 'Secret Acoustic Session', new Date(2022, 4, 22, 20, 40), new Date(2022, 4, 22, 21, 0));
+  timetable2.addEvent('Kúpel Mysle', 'RÁDIO_FM Stage', new Date(2022, 4, 22, 21, 0), new Date(2022, 4, 22, 21, 40), { url: 'https://sharpe.sk/festival/artists/kupel-mysle-sk/' });
+  timetable2.addEvent('Dutch Criminal Record', 'KOOPERATIVA Stage', new Date(2022, 4, 22, 21, 20), new Date(2022, 4, 22, 22, 0), { url: 'https://sharpe.sk/festival/artists/dutch-criminal-record-uk/' });
+  timetable2.addEvent('NIVVA', 'UNDERGROUND by Nočná', new Date(2022, 4, 22, 21, 20), new Date(2022, 4, 22, 22, 0), { url: 'https://sharpe.sk/festival/artists/nivva-cz/' });
+  timetable2.addEvent('Secret', 'Secret Acoustic Session', new Date(2022, 4, 22, 21, 20), new Date(2022, 4, 22, 21, 40));
+  timetable2.addEvent('LOTTA', 'Kabinet Stage', new Date(2022, 4, 22, 21, 40), new Date(2022, 4, 22, 22, 20), { url: 'https://sharpe.sk/festival/artists/lotta-sk/' });
+  timetable2.addEvent('Sam Handwich', 'Klub Cverna', new Date(2022, 4, 22, 22, 0), new Date(2022, 4, 22, 22, 40), { url: 'https://sharpe.sk/festival/artists/sam-handwich-sk/' });
+  timetable2.addEvent('Secret', 'Secret Acoustic Session', new Date(2022, 4, 22, 22, 0), new Date(2022, 4, 22, 22, 20));
+  timetable2.addEvent('Šajzerbitterlemon', 'RÁDIO_FM Stage', new Date(2022, 4, 22, 22, 20), new Date(2022, 4, 22, 23, 0), { url: 'https://sharpe.sk/festival/artists/sajzerbiterlemon-srb/' });
+  timetable2.addEvent('SHEKUZA', 'UNDERGROUND by Nočná', new Date(2022, 4, 22, 22, 40), new Date(2022, 4, 22, 23, 20), { url: 'https://sharpe.sk/festival/artists/shekuza-si/' });
+  timetable2.addEvent('Secret', 'Secret Acoustic Session', new Date(2022, 4, 22, 22, 40), new Date(2022, 4, 22, 23, 0));
+  timetable2.addEvent('Nov', 'Kabinet Stage', new Date(2022, 4, 22, 23, 0), new Date(2022, 4, 22, 23, 40), { url: 'https://sharpe.sk/festival/artists/nov-sk/' });
+  timetable2.addEvent('Nichi Mlebom', 'Klub Cverna', new Date(2022, 4, 22, 23, 20), new Date(2022, 4, 23, 0, 0), { url: 'https://sharpe.sk/festival/artists/nichi-mlebom-at/' });
+  timetable2.addEvent('Agat', 'RÁDIO_FM Stage', new Date(2022, 4, 22, 23, 40), new Date(2022, 4, 23, 0, 20), { url: 'https://sharpe.sk/festival/artists/agat-isr/' });
+  timetable2.addEvent('Chino', 'UNDERGROUND by Nočná', new Date(2022, 4, 23, 0, 0), new Date(2022, 4, 23, 0, 40), { url: 'https://sharpe.sk/festival/artists/chino-pl/' });
+  timetable2.addEvent('ATZUR', 'Kabinet Stage', new Date(2022, 4, 23, 0, 20), new Date(2022, 4, 23, 1, 0), { url: 'https://sharpe.sk/festival/artists/atzur-at/' });
+  timetable2.addEvent('Shallov', 'Klub Cverna', new Date(2022, 4, 23, 0, 40), new Date(2022, 4, 23, 1, 20), { url: 'https://sharpe.sk/festival/artists/shallov-sk/' });
+  timetable2.addEvent('Modecenter', 'RÁDIO_FM Stage', new Date(2022, 4, 23, 1, 0), new Date(2022, 4, 23, 1, 40), { url: 'https://sharpe.sk/festival/artists/modecenter-at/' });
+  timetable2.addEvent('Whithe', 'UNDERGROUND by Nočná', new Date(2022, 4, 23, 1, 20), new Date(2022, 4, 23, 2, 0), { url: 'https://sharpe.sk/festival/artists/whithe-sk/' });
+  timetable2.addEvent('Miklei', 'UNDERGROUND by Nočná', new Date(2022, 4, 23, 2, 0), new Date(2022, 4, 23, 4, 0), { url: 'https://sharpe.sk/festival/artists/miklei-ua/' });
+
+  var renderer2 = new Timetable.Renderer(timetable2);
+  renderer2.draw('#timetable-friday'); // any css selector
+</script>
+
+<script>
+  var timetable3 = new Timetable();
+  timetable3.addLocations(['Klub Cverna', 'KOOPERATIVA Stage', 'Kabinet Stage', 'Secret Acoustic Session', 'RÁDIO_FM Stage', 'UNDERGROUND']);
+  timetable3.setScope(18, 5); // optional, only whole hours between 0 and 23
+
+  timetable3.addEvent('OPEN', 'Klub Cverna', new Date(2022, 4, 23, 18, 0), new Date(2022, 4, 23, 18, 20));
+  timetable3.addEvent('Timea', 'KOOPERATIVA Stage', new Date(2022, 4, 23, 18, 40), new Date(2022, 4, 23, 19, 20), { url: 'https://sharpe.sk/festival/artists/timea-sk/' });
+  timetable3.addEvent('Tamara Kramar', 'Klub Cverna', new Date(2022, 4, 23, 19, 20), new Date(2022, 4, 23, 20, 0), { url: 'https://sharpe.sk/festival/artists/tamara-kramar-sk/' });
+  timetable3.addEvent('Erik Šulc & Space cats', 'KOOPERATIVA Stage', new Date(2022, 4, 23, 20, 0), new Date(2022, 4, 23, 20, 40), { url: 'https://sharpe.sk/festival/artists/erik-sulc-space-cats-sk/' });
+  timetable3.addEvent('Ivana Mer', 'Kabinet Stage', new Date(2022, 4, 23, 20, 20), new Date(2022, 4, 23, 21, 0), { url: 'https://sharpe.sk/festival/artists/ivana-mer-sk/' });
+  timetable3.addEvent('Mayberian Sanskülotts', 'Klub Cverna', new Date(2022, 4, 23, 20, 40), new Date(2022, 4, 23, 21, 20), { url: 'https://sharpe.sk/festival/artists/mayberian-sanskulotts-hu/' });
+  timetable3.addEvent('Secret', 'Secret Acoustic Session', new Date(2022, 4, 23, 20, 40), new Date(2022, 4, 23, 21, 0));
+  timetable3.addEvent('Planeta Polar', 'RÁDIO_FM Stage', new Date(2022, 4, 23, 21, 0), new Date(2022, 4, 23, 21, 40), { url: 'https://sharpe.sk/festival/artists/planeta-polar-lt/' });
+  timetable3.addEvent('Tolstoys', 'KOOPERATIVA Stage', new Date(2022, 4, 23, 21, 20), new Date(2022, 4, 23, 22, 0), { url: 'https://sharpe.sk/festival/artists/tolstoys-sk/' });
+  timetable3.addEvent('Secret', 'Secret Acoustic Session', new Date(2022, 4, 23, 21, 20), new Date(2022, 4, 23, 21, 40));
+  timetable3.addEvent('Adela Mede', 'UNDERGROUND', new Date(2022, 4, 23, 21, 20), new Date(2022, 4, 23, 22, 0), { url: 'https://sharpe.sk/festival/artists/adela-mede-sk/' });
+  timetable3.addEvent('rouge-ah', 'Kabinet Stage', new Date(2022, 4, 23, 21, 40), new Date(2022, 4, 23, 22, 20), { url: 'https://sharpe.sk/festival/artists/rouge-ah-si/' });
+  timetable3.addEvent('KOIKOI', 'Klub Cverna', new Date(2022, 4, 23, 22, 0), new Date(2022, 4, 23, 22, 40), { url: 'https://sharpe.sk/festival/artists/koikoi-srb/' });
+  timetable3.addEvent('Secret', 'Secret Acoustic Session', new Date(2022, 4, 23, 22, 0), new Date(2022, 4, 23, 22, 20));
+  timetable3.addEvent('Sahareya', 'RÁDIO_FM Stage', new Date(2022, 4, 23, 22, 20), new Date(2022, 4, 23, 23, 0), { url: 'https://sharpe.sk/festival/artists/sahareya-si/' });
+  timetable3.addEvent('Inkwall', 'UNDERGROUND', new Date(2022, 4, 23, 22, 40), new Date(2022, 4, 23, 23, 20), { url: 'https://sharpe.sk/festival/artists/inkwall-sk/' });
+  timetable3.addEvent('Secret', 'Secret Acoustic Session', new Date(2022, 4, 23, 22, 40), new Date(2022, 4, 23, 23, 0));
+  timetable3.addEvent('Nina Kohout', 'Kabinet Stage', new Date(2022, 4, 23, 23, 0), new Date(2022, 4, 23, 23, 40), { url: 'https://sharpe.sk/festival/artists/nina-kohout-sk/' });
+  timetable3.addEvent('italia 90', 'Klub Cverna', new Date(2022, 4, 23, 23, 20), new Date(2022, 4, 24, 0, 0), { url: 'https://sharpe.sk/festival/artists/italia-90/' });
+  timetable3.addEvent('Sýček', 'RÁDIO_FM Stage', new Date(2022, 4, 23, 23, 40), new Date(2022, 4, 24, 0, 20), { url: 'https://sharpe.sk/festival/artists/sycek-cz/' });
+  timetable3.addEvent('Oliver Torr', 'UNDERGROUND', new Date(2022, 4, 24, 0, 0), new Date(2022, 4, 24, 0, 40), { url: 'https://sharpe.sk/festival/artists/oliver-torr-cz/' });
+  timetable3.addEvent('The Ills', 'Kabinet Stage', new Date(2022,4,24,0,20), new Date(2022,4,24,1,0), {url: 'https://sharpe.sk/festival/artists/the-ills-sk/'});
+  timetable3.addEvent('Zouj', 'Klub Cverna', new Date(2022, 4, 24, 0, 40), new Date(2022, 4, 24, 1, 20), { url: 'https://sharpe.sk/festival/artists/zouj-de/' });
+  timetable3.addEvent('Fvck Kvlt', 'RÁDIO_FM Stage', new Date(2022, 4, 24, 1, 0), new Date(2022, 4, 24, 1, 40), { url: 'https://sharpe.sk/festival/artists/fvck_kvlt-sk/' });
+  timetable3.addEvent('Píla', 'Klub Cverna', new Date(2022, 4, 24, 1, 40), new Date(2022, 4, 24, 3, 0), { url: 'https://sharpe.sk/festival/artists/pila-sk/' });
+  timetable3.addEvent('Kladivo & Motyka', 'Klub Cverna', new Date(2022, 4, 24, 3, 0), new Date(2022, 4, 24, 5, 0), { url: 'https://sharpe.sk/festival/artists/kladivo-motyka-sk/' });
+
+  var renderer3 = new Timetable.Renderer(timetable3);
+  renderer3.draw('#timetable-saturday'); // any css selector
+</script>
+</body>
+</html>
